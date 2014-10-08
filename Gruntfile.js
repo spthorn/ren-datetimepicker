@@ -65,7 +65,7 @@ module.exports = function (grunt) {
 
         jscs: {
             all: [
-                'Gruntfile.js', 'src/js/*.js'
+                'Gruntfile.js', 'src/*.js'
             ],
             options: {
                 config: '.jscs.json'
@@ -78,15 +78,15 @@ module.exports = function (grunt) {
                     cleancss: true
                 },
                 files: {
-                    'build/css/bootstrap-datetimepicker.min.css': 'src/less/bootstrap-datetimepicker-build.less'
+                    'build/bootstrap-datetimepicker.min.css': 'src/bootstrap-datetimepicker-build.less'
                 }
             },
             development: {
                 files: {
-                    'build/css/bootstrap-datetimepicker.css': 'src/less/bootstrap-datetimepicker-build.less'
+                    'build/bootstrap-datetimepicker.css': 'src/bootstrap-datetimepicker-build.less'
                 }
             }
-        }        
+        }
 
     });
 
@@ -108,5 +108,4 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'jshint', 'jscs', 'uglify', 'less'
     ]);
-
 };
