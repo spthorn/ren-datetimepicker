@@ -1,8 +1,8 @@
 /*
- //! version : 4.0.0-beta
+ //! version : 1.0.0
  =========================================================
- bootstrap-datetimejs
- https://github.com/Eonasdan/bootstrap-datetimepicker
+ ren-datetimejs
+ https://github.com/spthorn/ren-datetimepicker
  =========================================================
  The MIT License (MIT)
 
@@ -36,17 +36,17 @@
     } else {
         // Neither AMD nor CommonJS used. Use global variables.
         if (!jQuery) {
-            throw 'bootstrap-datetimepicker requires jQuery to be loaded first';
+            throw 'ren-datetimepicker requires jQuery to be loaded first';
         }
         if (!moment) {
-            throw 'bootstrap-datetimepicker requires Moment.js to be loaded first';
+            throw 'ren-datetimepicker requires Moment.js to be loaded first';
         }
         factory(jQuery, moment);
     }
 }(function ($, moment) {
     'use strict';
     if (!moment) {
-        throw new Error('bootstrap-datetimepicker requires Moment.js to be loaded first');
+        throw new Error('ren-datetimepicker requires Moment.js to be loaded first');
     }
 
     var dateTimePicker = function (element, options) {
@@ -249,7 +249,7 @@
                 },
 
                 getTemplate = function () {
-                    var template = $('<div>').addClass('bootstrap-datetimepicker-widget dropdown-menu'),
+                    var template = $('<div>').addClass('ren-datetimepicker-widget dropdown-menu'),
                         dateView = $('<div>').addClass('datepicker').append(getDatePickerTemplate()),
                         timeView = $('<div>').addClass('timepicker').append(getTimePickerTemplate()),
                         content = $('<ul>').addClass('list-unstyled');
