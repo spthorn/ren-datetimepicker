@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         uglify : {
             target: {
                 files: {
-                    'build/bootstrap-datetimepicker.min.js' : 'src/bootstrap-datetimepicker.js'
+                    'build/ren-datetimepicker.min.js' : 'src/ren-datetimepicker.js'
                 }
             },
             options: {
@@ -78,12 +78,12 @@ module.exports = function (grunt) {
                     cleancss: true
                 },
                 files: {
-                    'build/bootstrap-datetimepicker.min.css': 'src/bootstrap-datetimepicker-build.less'
+                    'build/ren-datetimepicker.min.css': 'src/ren-datetimepicker-build.less'
                 }
             },
             development: {
                 files: {
-                    'build/bootstrap-datetimepicker.css': 'src/bootstrap-datetimepicker-build.less'
+                    'build/ren-datetimepicker.css': 'src/ren-datetimepicker-build.less'
                 }
             }
         }
