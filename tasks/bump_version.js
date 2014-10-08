@@ -4,8 +4,8 @@ module.exports = function (grunt) {
             grunt.fail.fatal("malformed version. Use\n\n    grunt bump_version:1.2.3")
         }
 
-        grunt.config('string-replace.bootstrap-datetimepicker-js', {
-            files: {'src/bootstrap-datetimepicker.js': 'src/bootstrap-datetimepicker.js'},
+        grunt.config('string-replace.ren-datetimepicker-js', {
+            files: {'src/ren-datetimepicker.js': 'src/ren-datetimepicker.js'},
             options: {
                 replacements: [
                     {
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         });
 
         grunt.task.run([
-            'string-replace:bootstrap-datetimepicker-js',
+            'string-replace:ren-datetimepicker-js',
             'string-replace:package-json',
         ]);
     });
