@@ -106,7 +106,7 @@ module.exports = function (grunt) {
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'jshint', 'jscs', 'uglify', 'less''
+        'jshint', 'jscs', 'uglify', 'less'
     ]);
 
 };
