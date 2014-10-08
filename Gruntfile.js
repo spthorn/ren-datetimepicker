@@ -58,17 +58,7 @@ module.exports = function (grunt) {
                 'quotmark' : 'single',
                 'globals': {
                     'define': false,
-                    'moment': false,
-                    // Jasmine
-                    'jasmine': false,
-                    'describe': false,
-                    'xdescribe': false,
-                    'expect': false,
-                    'it': false,
-                    'xit': false,
-                    'spyOn': false,
-                    'beforeEach': false,
-                    'afterEach': false
+                    'moment': false
                 }
             }
         },
