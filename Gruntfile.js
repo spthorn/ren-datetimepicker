@@ -61,7 +61,32 @@ module.exports = function (grunt) {
                     'moment': false
                 }
             }
-        }
+        },
+
+        jscs: {
+            all: [
+                'Gruntfile.js', 'src/js/*.js'
+            ],
+            options: {
+                config: '.jscs.json'
+            }
+        },
+
+        less: {
+            production: {
+                options: {
+                    cleancss: true
+                },
+                files: {
+                    'build/css/bootstrap-datetimepicker.min.css': 'src/less/bootstrap-datetimepicker-build.less'
+                }
+            },
+            development: {
+                files: {
+                    'build/css/bootstrap-datetimepicker.css': 'src/less/bootstrap-datetimepicker-build.less'
+                }
+            }
+        }        
 
     });
 
@@ -71,17 +96,17 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Default task.
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'jscs']);
 
     // travis build task
     grunt.registerTask('build:travis', [
         // code style
-        'jshint'
+        'jshint', 'jscs'
     ]);
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'jshint', 'uglify'
+        'jshint', 'jscs', 'uglify', 'less''
     ]);
 
 };
