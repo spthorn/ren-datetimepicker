@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         uglify : {
             target: {
                 files: {
-                    'build/js/bootstrap-datetimepicker.min.js' : 'src/js/bootstrap-datetimepicker.js'
+                    'build/bootstrap-datetimepicker.min.js' : 'src/bootstrap-datetimepicker.js'
                 }
             },
             options: {
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 
         jshint: {
             all: [
-                'Gruntfile.js', 'src/js/*.js'
+                'Gruntfile.js', 'src/*.js'
             ],
             options: {
                 'browser'  : true,
@@ -61,31 +61,6 @@ module.exports = function (grunt) {
                     'moment': false
                 }
             }
-        },
-
-        jscs: {
-            all: [
-                'Gruntfile.js', 'src/js/*.js'
-            ],
-            options: {
-                config: '.jscs.json'
-            }
-        },
-
-        less: {
-            production: {
-                options: {
-                    cleancss: true
-                },
-                files: {
-                    'build/css/bootstrap-datetimepicker.min.css': 'src/less/bootstrap-datetimepicker-build.less'
-                }
-            },
-            development: {
-                files: {
-                    'build/css/bootstrap-datetimepicker.css': 'src/less/bootstrap-datetimepicker-build.less'
-                }
-            }
         }
 
     });
@@ -96,60 +71,17 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'jscs']);
+    grunt.registerTask('default', ['jshint']);
 
     // travis build task
     grunt.registerTask('build:travis', [
         // code style
-        'jshint', 'jscs'
+        'jshint'
     ]);
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'jshint', 'jscs', 'uglify', 'less'
+        'jshint', 'uglify'
     ]);
 
-    grunt.registerTask('nuget', 'Create a nuget package', function () {
-        var target = grunt.option('target') || 'less', done = this.async();
-        if (target === 'less') {
-            grunt.util.spawn({
-                cmd: 'src/nuget/nuget.exe',
-                args: [
-                    'pack',
-                    'src/nuget/Bootstrap.v3.Datetimepicker.nuspec',
-                    '-OutputDirectory',
-                    'build/nuget',
-                    '-Version',
-                    grunt.config.get('pkg').version
-                ]
-            }, function (error, result) {
-                if (error) {
-                    grunt.log.error(error);
-                } else {
-                    grunt.log.write(result);
-                }
-                done();
-            });
-        }
-        else {
-            grunt.util.spawn({
-                cmd: 'src/nuget/nuget.exe',
-                args: [
-                    'pack',
-                    'src/nuget/Bootstrap.v3.Datetimepicker.CSS.nuspec',
-                    '-OutputDirectory',
-                    'build/nuget',
-                    '-Version',
-                    grunt.config.get('pkg').version
-                ]
-            }, function (error, result) {
-                if (error) {
-                    grunt.log.error(error);
-                } else {
-                    grunt.log.write(result);
-                }
-                done();
-            });
-        }
-    });
 };
