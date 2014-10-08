@@ -29,6 +29,7 @@ module.exports = function (grunt) {
             options: {
                 'browser'  : true,
                 'node'     : true,
+                'jquery'   : true,
                 'boss'     : false,
                 'curly'    : true,
                 'debug'    : false,
@@ -57,8 +58,17 @@ module.exports = function (grunt) {
                 'quotmark' : 'single',
                 'globals': {
                     'define': false,
-                    'jQuery': false,
-                    'moment': false
+                    'moment': false,
+                    // Jasmine
+                    'jasmine': false,
+                    'describe': false,
+                    'xdescribe': false,
+                    'expect': false,
+                    'it': false,
+                    'xit': false,
+                    'spyOn': false,
+                    'beforeEach': false,
+                    'afterEach': false
                 }
             }
         },
