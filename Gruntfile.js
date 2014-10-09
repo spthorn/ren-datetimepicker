@@ -101,7 +101,7 @@ module.exports = function (grunt) {
     // travis build task
     grunt.registerTask('build:travis', [
         // code style
-        'jshint', 'jscs', 'uglify', 'less'
+        'jshint', 'jscs'
     ]);
 
     // Task to be run when building
