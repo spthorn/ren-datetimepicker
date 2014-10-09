@@ -3,253 +3,266 @@
 //! version : 1.0.0
  * https://github.com/spthorn/ren-datetimepicker/
  */
- 
- @import "../bootstrap/variables.less";
+
+@import "../bootstrap/variables.less";
 
 .ren-datetimepicker-widget {
-    &.dropdown-menu {
-        margin: 2px 0;
-        padding: 4px;
-        width: 19em;
+	&.dropdown-menu {
+		margin: 2px 0;
+		padding: 4px;
+		width: 19em;
 
-        &.timepicker-sbs {
-            @media (min-width: @screen-sm-min) {
-                width: 38em;
-            }
-            @media (min-width: @screen-md-min) {
-                width: 38em;
-            }
-            @media (min-width: @screen-lg-min) {
-                width: 38em;
-            }
-        }
+		&.timepicker-sbs {
+			@media (min-width: @screen-sm-min) {
+				width: 38em;
+			}
 
-        &:before, &:after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-        }
+			@media (min-width: @screen-md-min) {
+				width: 38em;
+			}
 
-        &.bottom {
-            &:before {
-                border-left: 7px solid transparent;
-                border-right: 7px solid transparent;
-                border-bottom: 7px solid #ccc;
-                border-bottom-color: rgba(0,0,0,.2);
-                top: -7px;
-                left: 7px;
-            }
+			@media (min-width: @screen-lg-min) {
+				width: 38em;
+			}
+		}
 
-            &:after {
-                border-left: 6px solid transparent;
-                border-right: 6px solid transparent;
-                border-bottom: 6px solid white;
-                top: -6px;
-                left: 8px;
-            }
-        }
+		&:before, &:after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+		}
 
-        &.top {
-            &:before {
-                border-left: 7px solid transparent;
-                border-right: 7px solid transparent;
-                border-top: 7px solid #ccc;
-                border-top-color: rgba(0,0,0,.2);
-                bottom: -7px;
-                left: 6px;
-            }
+		&.bottom {
+			&:before {
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-bottom: 7px solid #ccc;
+				border-bottom-color: rgba(0,0,0,.2);
+				top: -7px;
+				left: 7px;
+			}
 
-            &:after {
-                border-left: 6px solid transparent;
-                border-right: 6px solid transparent;
-                border-top: 6px solid white;
-                bottom: -6px;
-                left: 7px;
-            }
-        }
+			&:after {
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-bottom: 6px solid white;
+				top: -6px;
+				left: 8px;
+			}
+		}
 
-        &.pull-right {
-            &:before {
-                left: auto;
-                right: 6px;
-            }
+		&.top {
+			&:before {
+				border-left: 7px solid transparent;
+				border-right: 7px solid transparent;
+				border-top: 7px solid #ccc;
+				border-top-color: rgba(0,0,0,.2);
+				bottom: -7px;
+				left: 6px;
+			}
 
-            &:after {
-                left: auto;
-                right: 7px;
-            }
-        }
-    }
+			&:after {
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-top: 6px solid white;
+				bottom: -6px;
+				left: 7px;
+			}
+		}
 
-    .list-unstyled {
-        margin: 0;
-    }
+		&.pull-right {
+			&:before {
+				left: auto;
+				right: 6px;
+			}
 
-    a[data-action] {
-        padding: 6px 0;
-    }
+			&:after {
+				left: auto;
+				right: 7px;
+			}
+		}
+	}
 
-    a[data-action]:active {
-        box-shadow: none;
-    }
+	.list-unstyled {
+		margin: 0;
+	}
 
-    .timepicker-hour, .timepicker-minute, .timepicker-second {
-        width: 54px;
-        font-weight: bold;
-        font-size: 1.2em;
-        margin: 0;
-    }
+	a[data-action] {
+		padding: 6px 0;
+	}
 
-    button[data-action] {
-        padding: 6px;
-    }
+		a[data-action]:active {
+			box-shadow: none;
+		}
 
-    .picker-switch {
-        text-align: center;
-        td {
-            padding: 0;
-            margin: 0;
-            height: auto;
-            width: auto;
-            line-height: inherit;
-            span {
-                line-height: 2.5;
-                height: 2.5em;
-                width: 90%;
-            }
-        }
-    }
+	.timepicker {
+		table {
+			margin: 4px 0 0 4px;
+		}
+	}
 
-    table {
-        width: 100%;
-        margin: 0;
-    }
+	.timepicker-hour, .timepicker-minute, .timepicker-second {
+		width: 54px;
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: 0;
+	}
 
-    td,
-    th {
-        text-align: center;
-        border-radius: @border-radius-base;
-    }
+	button[data-action] {
+		padding: 6px;
+	}
 
-    th {
-        height: 20px;
-        line-height: 20px;
-        width: 20px;
+	.picker-switch {
+		text-align: center;
 
-        &.picker-switch {
-            width: 145px;
-        }
+		table {
+			margin: 4px 0 0 4px;
+		}
 
-        &.disabled,
-        &.disabled:hover {
-            background: none;
-            color: @gray-light;
-            cursor: not-allowed;
-        }
-    }
+		td {
+			padding: 0;
+			margin: 0;
+			height: auto;
+			width: auto;
+			line-height: inherit;
 
-    thead tr:first-child th {
-        cursor: pointer;
+			span {
+				line-height: 2.5;
+				height: 2.5em;
+				width: 90%;
+			}
+		}
+	}
 
-        &:hover {
-            background: @gray-lighter;
-        }
-    }
+	table {
+		width: 100%;
+		margin: 0;
+	}
 
-    td {
-        height: 54px;
-        line-height: 54px;
-        width: 54px;
+	td,
+	th {
+		text-align: center;
+		border-radius: @border-radius-base;
+	}
 
-        &.cw {
-            font-size: .8em;
-            height: 20px;
-            line-height: 20px;
-            color: @gray-light;
-        }
+	th {
+		height: 20px;
+		line-height: 20px;
+		width: 20px;
 
-        &.day
-        {
-            height: 20px;
-            line-height: 20px;
-            width: 20px;
-        }
+		&.picker-switch {
+			width: 145px;
+		}
 
-        &.day:hover,
-        &.hour:hover,
-        &.minute:hover,
-        &.second:hover {
-            background: @gray-lighter;
-            cursor: pointer;
-        }
+		&.disabled,
+		&.disabled:hover {
+			background: none;
+			color: @gray-light;
+			cursor: not-allowed;
+		}
+	}
 
-        &.old,
-        &.new {
-            color: @gray-light;
-        }
+	thead tr:first-child th {
+		cursor: pointer;
 
-        &.today {
-            position: relative;
+		&:hover {
+			background: @gray-lighter;
+		}
+	}
 
-            &:before {
-                content: '';
-                display: inline-block;
-                border-left: 7px solid transparent;
-                border-bottom: 7px solid @btn-primary-bg;
-                border-top-color: rgba(0, 0, 0, 0.2);
-                position: absolute;
-                bottom: 4px;
-                right: 4px;
-            }
-        }
+	td {
+		height: 54px;
+		line-height: 54px;
+		width: 54px;
 
-        &.active,
-        &.active:hover {
-            background-color: @btn-primary-bg;
-            color: @btn-primary-color;
-            text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-        }
+		&.cw {
+			font-size: .8em;
+			height: 20px;
+			line-height: 20px;
+			color: @gray-light;
+		}
 
-        &.active.today:before {
-            border-bottom-color: #fff;
-        }
+		&.day {
+			height: 20px;
+			line-height: 20px;
+			width: 20px;
+		}
 
-        &.disabled,
-        &.disabled:hover {
-            background: none;
-            color: @gray-light;
-            cursor: not-allowed;
-        }
+			&.day:hover,
+			&.hour:hover,
+			&.minute:hover,
+			&.second:hover {
+				background: @gray-lighter;
+				cursor: pointer;
+			}
 
-        span {
-            display: inline-block;
-            width: 54px;
-            height: 54px;
-            line-height: 54px;
-            margin: 2px 1.5px;
-            cursor: pointer;
-            border-radius: @border-radius-base;
+		&.old,
+		&.new {
+			color: @gray-light;
+		}
 
-            &:hover {
-                background: @gray-lighter;
-            }
+		&.today {
+			position: relative;
 
-            &.active {
-                background-color: @btn-primary-bg;
-                color: @btn-primary-color;
-                text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-            }
+			&:before {
+				content: '';
+				display: inline-block;
+				border-left: 7px solid transparent;
+				border-bottom: 7px solid @btn-primary-bg;
+				border-top-color: rgba(0, 0, 0, 0.2);
+				position: absolute;
+				bottom: 4px;
+				right: 4px;
+			}
+		}
 
-            &.old {
-                color: @gray-light;
-            }
+		&.active,
+		&.active:hover {
+			background-color: @btn-primary-bg;
+			color: @btn-primary-color;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+		}
 
-            &.disabled,
-            &.disabled:hover {
-                background: none;
-                color: @gray-light;
-                cursor: not-allowed;
-            }
-        }
-    }
+			&.active.today:before {
+				border-bottom-color: #fff;
+			}
+
+		&.disabled,
+		&.disabled:hover {
+			background: none;
+			color: @gray-light;
+			cursor: not-allowed;
+		}
+
+		span {
+			display: inline-block;
+			width: 54px;
+			height: 54px;
+			line-height: 54px;
+			margin: 2px 1.5px;
+			cursor: pointer;
+			border-radius: @border-radius-base;
+
+			&:hover {
+				background: @gray-lighter;
+			}
+
+			&.active {
+				background-color: @btn-primary-bg;
+				color: @btn-primary-color;
+				text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			}
+
+			&.old {
+				color: @gray-light;
+			}
+
+			&.disabled,
+			&.disabled:hover {
+				background: none;
+				color: @gray-light;
+				cursor: not-allowed;
+			}
+		}
+	}
 }
