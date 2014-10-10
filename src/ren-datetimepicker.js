@@ -624,7 +624,7 @@
 				fillTime();
 			},
 
-			getValue = function() {
+			getValue = function () {
 				return input.val();
 			},
 
@@ -825,7 +825,7 @@
 					widget.find('.timepicker .timepicker-picker').show();
 				},
 
-				hidePicker: function() {
+				hidePicker: function () {
 					hide();
 				},
 
@@ -1321,7 +1321,7 @@
 			return picker;
 		};
 
-		picker.useExisting = function(useExisting) {
+		picker.useExisting = function (useExisting) {
 			if (arguments.length === 0) {
 				return options.useExisting;
 			}
