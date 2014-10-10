@@ -1323,7 +1323,9 @@
 
 		picker.useExisting = function(useExisting) {
 			if (arguments.length === 0)
+			{
 				return options.useExisting;
+			}
 
 			if (typeof useExisting !== 'boolean') {
 				throw new TypeError('useExisting() expects a boolean parameter');
@@ -1590,7 +1592,7 @@
 			up: 'fa fa-chevron-up',
 			down: 'fa fa-chevron-down',
 			previous: 'fa fa-chevron-left',
-			next: 'fa fa-chevron-right',
+			next: 'fa fa-chevron-right'
 		},
 		useStrict: false,
 		sideBySide: false,
