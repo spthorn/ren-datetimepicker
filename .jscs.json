@@ -55,7 +55,6 @@
     "disallowKeywords": ["with"],
     "disallowMultipleLineStrings": true,
     "validateLineBreaks": "LF",
-    //"validateIndentation": 4,
     "disallowTrailingWhitespace": true,
     "disallowTrailingComma": true,
     "requireLineFeedAtFileEnd": true,
