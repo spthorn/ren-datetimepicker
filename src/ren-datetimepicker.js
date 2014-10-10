@@ -235,26 +235,13 @@
 			},
 
 			getToolbar = function () {
-				var newfooter = "<span class='btn-group' style='float:left; margin-left-4px;'>";
-				newfooter += "<button class='btn btn-info' data-action='today'> Now </button>";
-				newfooter += "<button class='btn btn-danger' data-action='clear'> Clear </button>";
-				newfooter += "</span>";
-				newfooter += "<button class='btn btn-success' data-action='hidePicker' style='float:right; margin-right:4px;'>Done</button>";
-				newfooter += "<div style='clear:both'></div>";
-				return newfooter;
-
-
-				var row = [];
-				if (options.showTodayButton) {
-					row.push($('<td>').append($('<a>').attr('data-action', 'today').append($('<span>').addClass(options.icons.today).html(" Now"))));
-				}
-				if (hasDate() && hasTime()) {
-					row.push($('<td>').append($('<a>').attr('data-action', 'togglePicker').append($('<span>').addClass(options.icons.time).html(""))));
-				}
-				if (options.showClear) {
-					row.push($('<td>').append($('<a>').attr('data-action', 'clear').append($('<span>').addClass(options.icons.clear).html(" Clear"))));
-				}
-				return $('<table>').addClass('table-condensed').append($('<tbody>').append($('<tr>').append(row)));
+				var actionRow = '<span class="action-row-left btn-group">';
+				actionRow += '<button class="btn btn-info" data-action="today"><i class="fa fa-clock-o"></i> Now </button>';
+				actionRow += '<button class="btn btn-danger" data-action="clear"><i class="fa fa-close"></i> Clear </button>';
+				actionRow += '</span>';
+				actionRow += '<button class="action-row-right btn btn-success" data-action="hidePicker"><i class="fa fa-check"></i> Done</button>';
+				actionRow += '<div style="clear:both"></div>';
+				return $(actionRow);
 			},
 
 			getTemplate = function () {
@@ -1604,8 +1591,6 @@
 			down: 'fa fa-chevron-down',
 			previous: 'fa fa-chevron-left',
 			next: 'fa fa-chevron-right',
-			today: 'fa fa-bullseye',
-			clear: 'fa fa-trash-o'
 		},
 		useStrict: false,
 		sideBySide: false,
