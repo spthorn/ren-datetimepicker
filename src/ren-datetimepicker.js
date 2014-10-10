@@ -1322,8 +1322,7 @@
 		};
 
 		picker.useExisting = function(useExisting) {
-			if (arguments.length === 0)
-			{
+			if (arguments.length === 0) {
 				return options.useExisting;
 			}
 
