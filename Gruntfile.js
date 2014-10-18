@@ -98,7 +98,7 @@ module.exports = function (grunt) {
     // Default task.
     grunt.registerTask('default', ['jshint', 'jscs']);
 
-    // travis build task
+    // travis bare build task
     grunt.registerTask('build:travis', [
         // code style
         'jshint', 'jscs'
