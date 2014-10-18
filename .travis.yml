@@ -5,16 +5,15 @@ node_js:
 before_script:
   - npm install -g grunt-cli
 
-#script: grunt build:travis
 script: grunt build
 
 deploy:
   provider: releases
   api-key: "7cb0b13863d445b67c2820f6b604e527156b281c"
   file:
-    - "build\ren-datetimepicker.css"
-    - "build\ren-datetimepicker.min.css"
-    - "build\ren-datetimepicker.min.js"
+    - "ren-datetimepicker.css"
+    - "ren-datetimepicker.min.css"
+    - "ren-datetimepicker.min.js"
   skip_cleanup: true
   on:
     tags: true
