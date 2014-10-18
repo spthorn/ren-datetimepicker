@@ -3,6 +3,9 @@
 
 Test [this jsfiddle](http://jsfiddle.net/kmbo576p/).
 
+Usage:
+Check out the latest Release (see release tags above).
+
 Forked from https://github.com/Eonasdan/bootstrap-datetimepicker because needed change weren't getting pushed.
 
 TODO:
