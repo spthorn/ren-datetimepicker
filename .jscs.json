@@ -54,7 +54,7 @@
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "disallowKeywords": ["with"],
     "disallowMultipleLineStrings": true,
-    "validateLineBreaks": "LF",
+    "validateLineBreaks": "CRLF",
     "disallowTrailingWhitespace": true,
     "disallowTrailingComma": true,
     "requireLineFeedAtFileEnd": true,
